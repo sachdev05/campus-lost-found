@@ -7,7 +7,7 @@ const db = require("./config/db"); // MySQL connection
 const itemRoutes = require("./routes/items"); // CRUD routes
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-
+const xss = require("xss-clean");
 const app = express();
 
 // Middleware
@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(helmet());
 app.use(rateLimit({ windowMs: 1*60*1000, max: 100 })); // 100 requests per minute
+app.use(xss());
 
 // Serve frontend files
 app.use(express.static("public"));

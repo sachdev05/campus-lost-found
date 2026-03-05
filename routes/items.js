@@ -1,9 +1,25 @@
+const { body, validationResult } = require("express-validator");
 const express = require("express");
 const router = express.Router();
 const db = require("../config/db");
 
 /* CREATE ITEM */
-router.post("/", async (req, res) => {
+router.post("/",
+[
+  body("title").notEmpty().trim().escape(),
+  body("description").notEmpty().trim().escape(),
+  body("category").isIn(["Lost","Found"]),
+  body("location").notEmpty().trim().escape(),
+  body("contact").notEmpty().trim().escape()
+],
+async (req, res) => {
+
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   const { title, description, category, location, date, contact } = req.body;
 
   try {
@@ -13,10 +29,12 @@ router.post("/", async (req, res) => {
     );
 
     res.json({ message: "Item added successfully" });
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to add item" });
   }
+
 });
 
 /* READ ALL ITEMS */
