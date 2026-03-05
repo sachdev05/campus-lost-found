@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Item — Campus Lost & Found</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container form-page">
+
+  <header class="site-header">
+    <div class="header-tag">NEW REPORT</div>
+    <h1>Report an Item</h1>
+    <p class="header-sub">Fill in the details below to submit a lost or found report</p>
+  </header>
+
+  <form id="itemForm">
+
+    <div class="form-group">
+      <label for="title">Item Title</label>
+      <input type="text" id="title" placeholder="e.g. Blue Water Bottle" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Describe the item in detail..." rows="4" required></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="Lost">Lost Item</option>
+          <option value="Found">Found Item</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="e.g. Library 2nd Floor, Block B Cafeteria">
+    </div>
+
+    <div class="form-group">
+      <label for="contact">Contact Information</label>
+      <input type="text" id="contact" placeholder="e.g. student@uni.edu or 012-3456789">
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Report</button>
+
+  </form>
+
+  <a class="back-link" href="index.html">← Back to Home</a>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
