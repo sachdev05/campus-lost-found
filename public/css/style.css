@@ -407,3 +407,4 @@ textarea { resize: vertical; min-height: 100px; }
   .stats     { flex-direction: column; }
   .form-row  { grid-template-columns: 1fr; }
 }
+/* UI improvements for item cards */
