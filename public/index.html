@@ -1,66 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Campus Lost & Found</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
+
+
 <body>
 
 <div class="container">
 
-  <header class="site-header">
-    <div class="header-tag">CAMPUS SYSTEM</div>
-    <h1>🎒 Lost &amp; Found</h1>
-    <p class="header-sub">Report, search, and recover lost items on campus</p>
-  </header>
+<header class="site-header">
+
+<div class="header-tag">CAMPUS SYSTEM</div>
+
+<h1>🎒 Lost & Found</h1>
+
+<p class="header-sub">
+Report, search, and recover lost items on campus
+</p>
+
+</header>
+
 
 <div class="top-bar">
-  <a class="button-link" href="add.html">+ Report Item</a>
-  <a class="button-link" href="lost.html">View Lost Items</a>
-  <a class="button-link" href="found.html">View Found Items</a>
-</div>
 
-  <div class="stats">
-    <div class="stat-card">
-      <h3 id="totalItems">0</h3>
-      <p>Total Reports</p>
-    </div>
-    <div class="stat-card lost-stat">
-      <h3 id="lostCount">0</h3>
-      <p>Lost Items</p>
-    </div>
-    <div class="stat-card found-stat">
-      <h3 id="foundCount">0</h3>
-      <p>Found Items</p>
-    </div>
-  </div>
+<a class="button-link" href="add.html">
++ Report Item
+</a>
 
-  <div class="search-filter-row">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔍  Search by title or description..."
-      oninput="filterItems()"
-    />
-    <div class="filters">
-      <button class="filter-btn active" onclick="showAll(this)">All</button>
-      <button class="filter-btn" onclick="filterCategory('Lost', this)">Lost</button>
-      <button class="filter-btn" onclick="filterCategory('Found', this)">Found</button>
-    </div>
-  </div>
-
-  <div id="toast" class="toast"></div>
-
-  <div id="itemsList" class="items-grid">
-    <div class="loading">Loading items...</div>
-  </div>
 
 </div>
+
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3 id="totalItems">0</h3>
+
+<p>Total Reports</p>
+
+</div>
+
+
+<div class="stat-card lost-stat">
+
+<h3 id="lostCount">0</h3>
+
+<p>Lost Items</p>
+
+</div>
+
+
+<div class="stat-card found-stat">
+
+<h3 id="foundCount">0</h3>
+
+<p>Found Items</p>
+
+</div>
+
+</div>
+
+
+<div class="search-filter-row">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search by title or description..."
+>
+
+
+<div class="filters">
+
+<button id="filterAll" class="filter-btn">
+All
+</button>
+
+<button id="filterLost" class="filter-btn">
+Lost
+</button>
+
+<button id="filterFound" class="filter-btn">
+Found
+</button>
+
+</div>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+
+<div id="itemsList" class="items-grid">
+
+<div class="loading">
+Loading items...
+</div>
+
+</div>
+
+</div>
+
 
 <script src="js/script.js"></script>
+
 </body>
+
 </html>
